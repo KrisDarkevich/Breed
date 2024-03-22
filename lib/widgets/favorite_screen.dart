@@ -33,16 +33,6 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
           }
         },
       ),
-      // Center(
-      //   child: Column(
-      //     children: [
-      //       SizedBox(
-      //         height: 100,
-      //       ),
-      //       Text('kjk'),
-      //     ],
-      //   ),
-      // ),
     );
   }
 }

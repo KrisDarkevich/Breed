@@ -29,7 +29,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
               index: index,
             );
           } else {
-            return SizedBox();
+            return const SizedBox();
           }
         },
       ),

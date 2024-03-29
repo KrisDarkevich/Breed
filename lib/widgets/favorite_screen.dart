@@ -6,10 +6,8 @@ class FavoriteScreen extends StatefulWidget {
   const FavoriteScreen({
     super.key,
     required this.breedsInfo,
-    // required this.index,
   });
   final List<BreedsInfo> breedsInfo;
-  // final int index;
 
   @override
   State<FavoriteScreen> createState() => _FavoriteScreenState();

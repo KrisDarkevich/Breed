@@ -6,8 +6,14 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
-  final client = Dio()
-    ..interceptors.add(
+  final client = Dio(
+    BaseOptions(
+      headers: {
+        'x-api-key':
+            'live_tD6kGXnUrhQYrAZboJRpbjXFN2dKAS6nM43XP1tJSGe1ajRRHuTs1ENDqdEpaQgO',
+      },
+    ),
+  )..interceptors.add(
       InterceptorsWrapper(
         onRequest: (options, handler) {
           print('ti lox2');

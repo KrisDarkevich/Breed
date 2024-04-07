@@ -10,14 +10,8 @@ class ApiClient {
   ApiClient(this.client);
 
   Future<List<BreedsInfo>> getUrl() async {
-    final response = await Dio(
-      BaseOptions(
-        headers: {
-          'x-api-key':
-              'live_tD6kGXnUrhQYrAZboJRpbjXFN2dKAS6nM43XP1tJSGe1ajRRHuTs1ENDqdEpaQgO',
-        },
-      ),
-    ).get('https://api.thecatapi.com/v1/images/search?has_breeds=1&limit=10');
+    final response = await client.get(
+        'https://api.thecatapi.com/v1/images/search?has_breeds=1&limit=10');
 
     final json = jsonDecode(jsonEncode(response.data)) as List<dynamic>;
     final info = json
@@ -25,8 +19,6 @@ class ApiClient {
           (e) => BreedsInfo.fromJson(e),
         )
         .toList();
-
-    
 
     print(response.statusCode);
     return info;

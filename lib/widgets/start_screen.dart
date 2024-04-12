@@ -1,37 +1,42 @@
+import 'package:cat_breeds/logic/api_list.dart';
 import 'package:cat_breeds/logic/breeds_info.dart';
 import 'package:cat_breeds/constants/colors.dart';
 import 'package:cat_breeds/constants/icons.dart';
 import 'package:cat_breeds/constants/text_style.dart';
 import 'package:cat_breeds/widgets/info_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-// Добавить FAB, который по нажатию на него будет обновлять список
-// с котами
-// Добавить bottomnavigationbar с 2 страницами, на первой отображается
-// текущий экран с котами, на втором экране коты, которых ты добавила
-// в избранное по нажатию на иконку сердечка на карточке
+class StartScreen extends StatelessWidget {
+  const StartScreen({super.key});
 
-class StartScreen extends StatefulWidget {
-  const StartScreen({super.key, required this.breedsInfo});
-
-  final List<BreedsInfo> breedsInfo;
-
-  @override
-  State<StartScreen> createState() => _StartScreenState();
-}
-
-class _StartScreenState extends State<StartScreen> {
   @override
   Widget build(BuildContext context) {
+    final apiList = Provider.of<ApiList>(context);
+
     return Scaffold(
-      body: ListView.builder(
-        shrinkWrap: true,
-        itemCount: widget.breedsInfo.length,
-        itemBuilder: (_, int index) {
-          return Card(
-            breedsInfo: widget.breedsInfo[index],
-            index: index,
-          );
+      body: FutureBuilder(
+        future: apiList.getList(),
+        builder: (BuildContext context, AsyncSnapshot snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            return ListView.builder(
+              shrinkWrap: true,
+              itemCount: apiList.list.length,
+              itemBuilder: (_, int index) {
+                return Card(
+                  breedsInfo: apiList.list[index],
+                  index: index,
+                );
+              },
+            );
+          } else {
+            return const Center(
+              child: CircularProgressIndicator(
+                strokeWidth: 5,
+                color: BreedColors.cardFirst,
+              ),
+            );
+          }
         },
       ),
     );

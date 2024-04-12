@@ -16,12 +16,9 @@ class InfoScreen extends StatefulWidget {
 }
 
 class _InfoScreenState extends State<InfoScreen> {
-  // final bool isLiked;
   @override
   Widget build(BuildContext context) {
-    // const bool isLiked = false;
     final breed = widget.breedsInfo.list.first;
-    // bool toggle = false;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: BreedColors.appBarColor,

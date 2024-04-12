@@ -20,7 +20,6 @@ class ApiClient {
         )
         .toList();
 
-    print(response.statusCode);
     return info;
   }
 }

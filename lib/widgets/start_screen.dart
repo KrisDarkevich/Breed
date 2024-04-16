@@ -43,7 +43,7 @@ class StartScreen extends StatelessWidget {
   }
 }
 
-class Card extends StatefulWidget {
+class Card extends StatelessWidget {
   const Card({
     super.key,
     required this.breedsInfo,
@@ -54,11 +54,6 @@ class Card extends StatefulWidget {
   final int index;
 
   @override
-  State<Card> createState() => _CardState();
-}
-
-class _CardState extends State<Card> {
-  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
@@ -66,8 +61,8 @@ class _CardState extends State<Card> {
           context,
           MaterialPageRoute(
             builder: (context) => InfoScreen(
-              breedsInfo: widget.breedsInfo,
-              index: widget.index,
+              breedsInfo: breedsInfo,
+              index: index,
             ),
           ),
         );
@@ -101,8 +96,8 @@ class _CardState extends State<Card> {
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: _ImageIndicator(
-                breedsInfo: widget.breedsInfo,
-                index: widget.index,
+                breedsInfo: breedsInfo,
+                index: index,
               ),
             ),
             const SizedBox(width: 10),
@@ -112,7 +107,7 @@ class _CardState extends State<Card> {
                 children: [
                   const Spacer(),
                   Text(
-                    widget.breedsInfo.list.first.name,
+                    breedsInfo.list.first.name,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 3,
                     style: BreedsText.mainScreenName,

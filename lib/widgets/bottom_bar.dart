@@ -1,18 +1,12 @@
 import 'package:cat_breeds/constants/colors.dart';
-import 'package:cat_breeds/logic/api_call.dart';
-// import 'package:cat_breeds/logic/api_list.dart';
 import 'package:cat_breeds/logic/mob.dart';
+import 'package:cat_breeds/widgets/favorite_screen.dart';
 import 'package:cat_breeds/widgets/start_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:provider/provider.dart';
 
 class BottomNavigationBarExample extends StatelessWidget {
-  const BottomNavigationBarExample({
-    super.key,
-    // required this.apiClient,
-  });
-  // final ApiClient apiClient;
+  const BottomNavigationBarExample({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +17,8 @@ class BottomNavigationBarExample extends StatelessWidget {
         builder: (_) {
           return Center(
             child: [
-              const StartScreen(
-                  // apiClient: apiClient,
-                  ),
-              // FavoriteScreen(
-              //   breedsInfo: breedsInfo,
-              // ),
+              const StartScreen(),
+              const FavoriteScreen(),
             ].elementAt(counter.selectedIndex),
           );
         },

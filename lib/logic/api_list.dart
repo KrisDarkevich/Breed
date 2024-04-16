@@ -16,6 +16,6 @@ abstract class _ApiList with Store {
 
   @action
   Future<void> getList() async {
-    list.addAll(await apiClient.getUrl());
+    if (list.isEmpty) list.addAll(await apiClient.getUrl());
   }
 }

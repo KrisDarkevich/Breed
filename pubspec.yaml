@@ -36,6 +36,11 @@ dependencies:
   mobx: ^2.3.3+1
   flutter_mobx: ^2.2.1+1
   provider: ^6.1.2
+  integration_test:
+    sdk: flutter
+  flutter_test:
+    sdk: flutter
+  
   
   
 
@@ -47,11 +52,12 @@ dependencies:
   
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
+ 
   json_serializable: ^6.7.1
   build_runner: ^2.4.8
   mobx_codegen: ^2.6.1
+  network_image_mock: ^2.0.1
+  
   
 
   # The "flutter_lints" package below contains a set of recommended lints to
@@ -60,6 +66,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

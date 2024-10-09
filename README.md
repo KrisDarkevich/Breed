@@ -1,17 +1,19 @@
 # cat_breeds
 
-A new Flutter project.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Зависимости проекта
 
-A few resources to get you started if this is your first Flutter project:
+- [json annotation](https://pub.dev/packages/json_annotation)
+- [http](https://pub.dev/packages/http)
+- [dio](https://pub.dev/packages/dio)
+- [flutter mobx](https://pub.dev/packages/flutter_mobx)
+- [provider](https://pub.dev/packages/provider)
+- [network image mock](https://pub.dev/packages/network_image_mock/versions/1.0.0)
+- [json serializable](https://pub.dev/packages/json_serializable)
+ 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+ ### Функционал
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-#Breed
+- просмотр пород кошек и информации о них
+- добавление карточек пород в избранное
